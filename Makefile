@@ -23,6 +23,8 @@ rebuild:
 	$(DC) build
 	$(DC) up -d
 
+test:
+	python -m unittest discover -s app/tests -p '*_test.py'
 
 # Target for making sure Makefile runs correctly
 .PHONY: build up down logs rebuild
