@@ -2,10 +2,11 @@ from consumer import Consumer
 from producer import Producer
 from aggregator import Aggregator
 
+
 def manage() -> None:
-    kafka_server = 'localhost:9092'
-    topic_to_consume = 'data'
-    topic_to_send = 'agg'
+    kafka_server = "localhost:9092"
+    topic_to_consume = "data"
+    topic_to_send = "agg"
     consumer = Consumer(topic=topic_to_consume, servers=kafka_server)
     producer = Producer(topic=topic_to_send, servers=kafka_server)
     aggregator = Aggregator()
@@ -19,8 +20,10 @@ def manage() -> None:
             continue
         producer.send(data=aggregated_data)
 
+
 def main():
     manage()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
